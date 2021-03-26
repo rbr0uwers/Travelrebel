@@ -16,7 +16,8 @@ export class NavbarComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e: Event) {
     let ele = document.querySelector('.navbar');
-    if (window.pageYOffset >= window.innerHeight - ele!.clientHeight) {
+    let hero = document.querySelector('.hero')
+    if (window.pageYOffset >= hero!.clientHeight - ele!.clientHeight) {
       ele!.classList.add('bg-dark');
       ele!.classList.remove('bg-transparent');
     } else {
