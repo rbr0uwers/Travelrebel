@@ -1,4 +1,60 @@
-<div class="container-fluid">
+<div class="container-fluid hero">
     <tr-navbar></tr-navbar>
-    <p>Checkout</p>
+</div>
+<div class="container min-vh-50">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center display-6 mt-2">Your order</h2>
+            <p class="fs-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        </div>
+    </div>
+    <ng-template [ngIf]="cart.length > 0" [ngIfElse]="empty">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Persons</th>
+                <th scope="col"></th>
+                <th scope="col">Travel</th>
+                <th scope="col">Travel Date</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let travel of cart">
+                <th scope="row"> 1
+                </th>
+                <td><img class="img-thumbnail"src="{{travel.img}}" alt=""></td>
+                <!-- TODO FIX ME -->
+                <td>{{travel.startdates[0].toLocaleDateString()}} - {{travel.startdates[0].getDate() + travel.duration}}</td>
+                <td>{{travel.destination}} - {{travel.title}}</td>
+                <td>{{travel.price.toFixed(2)}} EUR</td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{cartTotal.toFixed(2)}} EUR</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="d-flex justify-content-between">
+            <div class="p-2">
+                <a class="btn btn-outline-success" routerLink=""><i class="fas fa-arrow-left"></i> Back to our Travels</a>        
+            </div>
+            <div class="p-2">
+                <button class="btn btn-success" (click)="placeOrder()">Place Order</button> 
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #empty> 
+        <div class="mt-5">
+            <p>Your cart is currently empty.</p>
+            <a class="btn btn-outline-success" routerLink="../travels"><i class="fas fa-arrow-left"></i> Check our travels</a>   
+        </div>  
+    </ng-template>
+    
+    
 </div>

@@ -1,0 +1,17 @@
+.hero {
+    background-image: url(../../assets/img/sagar-rana-bFDdb5Yl_-w-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vh;
+}
+
+.min-vh-50 {
+    min-height: 50vh;
+}
+
+.img-thumbnail{
+    height: 10vh;
+    width: 10rem;
+    object-fit: cover;
+}
