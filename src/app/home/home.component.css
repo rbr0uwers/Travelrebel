@@ -1,8 +1,17 @@
 .hero {
-    background-image: url(https://images.pexels.com/photos/230785/pexels-photo-230785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-image: url(../../assets/img/dmitrii-vaccinium-9qsK2QHidmg-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
     height: 100vh;
+}
+
+.btn-book {
+    width: 20rem;
+}
+
+.img-cover {
+    object-fit: cover;
+    height: 45vh;
+    width: 100%;
 }
