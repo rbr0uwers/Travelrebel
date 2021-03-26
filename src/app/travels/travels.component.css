@@ -1,0 +1,13 @@
+.hero {
+    background-image: url(../../assets/img/marek-piwnicki-40HwXfEoWvQ-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vh;
+}
+
+.img-cover {
+    object-fit: cover;
+    height: 20vh;
+    width: 100%;
+}

@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'tr-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, DoCheck {
+  
+  travelCnt: number = 0;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
+  
+  ngDoCheck(): void {
+    this.travelCnt = this.cartService.getItemCount();
+  }
 
   ngOnInit(): void {
   }
