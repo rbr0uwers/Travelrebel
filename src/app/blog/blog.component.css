@@ -1,0 +1,13 @@
+.hero {
+    background-image: url(../../assets/img/max-bender-YOk0D5sz3e4-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vh;
+}
+
+.img-cover {
+    object-fit: cover;
+    height: 30vh;
+    width: 100%;
+}
