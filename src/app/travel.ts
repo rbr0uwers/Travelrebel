@@ -7,3 +7,8 @@ export interface Travel {
     price: number;
     img: string;
 }
+
+export interface SelectedTravel extends Travel { 
+    selectedStartdate: Date;
+    persons: number;
+}

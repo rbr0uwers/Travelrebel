@@ -25,14 +25,17 @@
             </ul>
             <div class="card-footer">
                 <div class="row">
-                    <div class="col-6">
-                        <select class="form-select" type="date" [(ngModel)]="date">
-                            <option *ngFor="let date of travel.startdates" [ngValue]="date">{{date.toLocaleDateString()}}</option>
-                        </select>
-                    </div>
-                    <div class="col-6 text-end">
-                        <button class="btn btn-outline-success" (click)="addToCart(travel)">Add to Cart</button>
-                    </div>
+                    <form class="row g-3" [formGroup]="selection" (ngSubmit)="onSubmit(travel)">
+                        <div class="col-xl-7 col-lg-6 col-8">
+                            <select type="date" class="form-select" formControlName="date">
+                                <option disabled selected value="">Select a start date</option>
+                                <option *ngFor="let date of travel.startdates" [ngValue]="date">{{date.toLocaleDateString()}}</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-5 col-lg-6 col-4 text-end">
+                            <button type="submit" class="btn btn-outline-success">Add to Cart</button>
+                        </div>
+                    </form>
                 </div>
             </div>
           </div>
