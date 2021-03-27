@@ -28,7 +28,6 @@
               "src/assets"
             ],
             "styles": [
-              "../node-modules/@sweetalert2/theme-bootstrap-4/bootstrap-4.css",
               "src/styles.css"
             ],
             "scripts": []
