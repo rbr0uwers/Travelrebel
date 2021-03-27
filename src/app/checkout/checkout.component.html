@@ -41,7 +41,9 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>{{cartTotal.toFixed(2)}} EUR</td>
+                    <td>{{discountedTotal.toFixed(2)}} EUR
+                        <div *ngIf="discount > 0" class="text-success"><small>You save {{discount.toFixed(2)}} EUR</small> </div>
+                    </td>
                 </tr>
             </tfoot>
         </table>
