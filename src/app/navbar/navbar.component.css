@@ -11,3 +11,14 @@
         background-color: #212529;
     }
 }
+
+@media (max-width: 576px) {
+    .checkout-nav{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #212529;
+        text-align: center;
+    }
+}
