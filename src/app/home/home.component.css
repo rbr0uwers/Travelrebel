@@ -15,3 +15,10 @@
     height: 45vh;
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .img-cover {
+        height: 30vh;
+        object-position: 0 30%;
+    }
+}
