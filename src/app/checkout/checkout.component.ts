@@ -11,17 +11,20 @@ import Swal from 'sweetalert2';
 export class CheckoutComponent implements OnInit, DoCheck {
 
   cart: Array<SelectedTravel> = [];
+  total: number = 0;
   discountedTotal: number = 0;
   discount : number = 0;
 
   constructor(private cartService: CartService) { }
   ngDoCheck(): void {
+    this.total = this.cartService.getTotal();
     this.discountedTotal = this.cartService.getDiscountedTotal();
     this.cart = this.cartService.getItems();
     this.discount = this.cartService.getTotal() - this.cartService.getDiscountedTotal();
   }
 
   ngOnInit(): void {
+    this.total = this.cartService.getTotal();
     this.cart = this.cartService.getItems();
     this.discountedTotal = this.cartService.getDiscountedTotal();
     this.discount = this.cartService.getTotal() - this.cartService.getDiscountedTotal();

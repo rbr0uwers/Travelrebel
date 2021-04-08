@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Travel, SelectedTravel } from './travel';
+import { SelectedTravel } from './travel';
 
 @Injectable({
   providedIn: 'root'

@@ -22,32 +22,44 @@
             <tbody>
             <tr *ngFor="let travel of cart">
                 <td><img class="img-thumbnail"src="{{travel.img}}" alt=""></td>
-                <th scope="row text-center">{{travel.persons}}
+                <td><span class="ms-4">{{travel.persons}}</span>
                     <div>
                         <input type="button" class="btn btn-outline-success" value="+" name="btnPersonPlus" (click)="increasePersons(travel)">
                         <input type="button" class="btn btn-outline-danger" value="-" name="btnPersonPlus" (click)="decreasePersons(travel)">
                     </div>
                     
-                </th>
+                </td>
                 <!-- TODO FIX ME -->
                 <td>{{travel.selectedStartdate.toLocaleDateString()}}</td>
                 <td>{{travel.destination}} - {{travel.title}}</td>
                 <td>{{travel.price.toFixed(2)}} EUR</td>
             </tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <th></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>{{discountedTotal.toFixed(2)}} EUR
-                        <div *ngIf="discount > 0" class="text-success"><small>You save {{discount.toFixed(2)}} EUR</small> </div>
-                    </td>
-                </tr>
-            </tfoot>
         </table>
-        <div class="d-flex justify-content-between">
+        <div class="row justify-content-end">
+            <table style="width: 18rem">
+            <thead>
+                <tr>
+                    <th style="width: 50%"></th>
+                    <th style="width: 50%"></th>
+                  </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="discount > 0">
+                    <td>Total:</td>
+                    <td class="text-end">{{total.toFixed(2)}} EUR</td>
+                </tr>
+                <tr class="text-success" *ngIf="discount > 0">
+                    <td>Discount:</td>
+                    <td class="text-end">-{{discount.toFixed(2)}} EUR</td>
+                </tr>
+                <tr>
+                    <td><span *ngIf="discount > 0">Discounted</span> Total:</td>
+                    <td class="text-end">{{discountedTotal.toFixed(2)}} EUR</td>
+                </tr>
+        </table>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
             <div class="p-2">
                 <a class="btn btn-outline-success" routerLink="../travels"><i class="fas fa-arrow-left"></i> Back to our Travels</a>        
             </div>
