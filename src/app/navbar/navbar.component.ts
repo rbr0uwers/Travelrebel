@@ -22,14 +22,19 @@ export class NavbarComponent implements OnInit, DoCheck {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e: Event) {
-    let ele = document.querySelector('.navbar');
-    let hero = document.querySelector('.hero')
+    let ele = document.querySelector<HTMLElement>('.navbar');
+    let hero = document.querySelector<HTMLElement>('.hero')
+    
+    //ignore on md size --> set it to #212529 instead
+    if (window.innerWidth < 768) {
+      ele!.style.backgroundColor = "#212529";
+      return;
+    }
+    
     if (window.pageYOffset >= hero!.clientHeight - ele!.clientHeight) {
-      ele!.classList.add('bg-dark');
-      ele!.classList.remove('bg-transparent');
+      ele!.style.backgroundColor = "#212529";
     } else {
-      ele!.classList.remove('bg-dark');
-      ele!.classList.add('bg-transparent');
+      ele!.style.backgroundColor = "transparent";
     }
   }
 }
